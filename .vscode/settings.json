@@ -1,3 +1,5 @@
 {
-    "editor.fontSize": 22
+    "editor.fontSize": 16,
+    "debug.console.fontSize": 16,
+    "scm.inputFontSize": 14
 }

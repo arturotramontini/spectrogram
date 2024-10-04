@@ -1,4 +1,4 @@
-import config 
+import config
 
 from rect import Rect
 from source import File, Microphone
@@ -12,17 +12,20 @@ from utils import logger
 
 
 class App(Window):
-	
+
 	def init(self):
 
+
+
+
 		logger.info(f'init')
-	
-	
+
+
 		# self.source = File('audio/gettysburg.wav')
 		self.source = Microphone()
-	
+
 		self.nodes = []
-	
+
 		self.wave = Wave(self.ctx, 0, 0, config.WINDOW_WIDTH, 200)
 		self.nodes.append(self.wave)
 
@@ -37,7 +40,7 @@ class App(Window):
 
 		# Wave separation line
 		self.nodes.append(Rect(self.ctx, 0, self.wave.h, config.WINDOW_WIDTH, 2, bg_color))
-		
+
 
 		# Time axis background
 		# self.r1 = Rect(self.ctx, 0, 660, config.WINDOW_WIDTH, 70, bg_color)
@@ -53,7 +56,7 @@ class App(Window):
 		self.nodes.append(
 			Ticks(self.ctx, x=81, y=660, w=1200, h=15, gap=6, color=(0.3,0.3,0.4,1))
 		)
-		
+
 		# 1 second ticks
 		self.nodes.append(
 			Ticks(self.ctx, x=81, y=660, w=1200, h=25, gap=120, color=(0.4,0.4,0.5,1))
@@ -77,28 +80,28 @@ class App(Window):
 
 
 		# Text
-		
+
 		# Create text renderer
 		text = Text(self.ctx)
 		self.nodes.append(text)
-		
+
 		# Seconds text
 		for i in range(1, 11):
 			x = config.WINDOW_WIDTH - i * 120
 			text.add(f'{i}s', x, 705, align='center')
-			
+
 		# Hz text
 		for i in range(6):
 			hz = i * 2000
 			y = 660 - pixels_per_freq * hz + 4
 			text.add(f'{hz}hz', 62, y, align="right")
-			
+
 
 
 	def size(self,w,h):
 
-		# self.wave.size(w, h) 
-		# self.spec.size(w, h) 
+		# self.wave.size(w, h)
+		# self.spec.size(w, h)
 		# self.r1.size(w,h)
 		# self.r2.size(w,h)
 		for node in self.nodes:
@@ -112,7 +115,7 @@ class App(Window):
 		logger.info(f'{self.source.hop_cnt}, {self.source.hop_size}, {available}')
 		# logger.info(f'{self.source.hop_cnt}, {self.source.hop_size}, {available}, {window.shape if window is not None else None}')
 		# logger.info(f'{available}, {window.shape if window is not None else None}')
-		
+
 		# self.wave.add(window)
 		for i in range(2):
 			window = self.source.get()
@@ -134,7 +137,7 @@ class App(Window):
 		logger.info('exit')
 		self.source.release()
 
- 
+
 
 if __name__ == '__main__':
 	App.run()

@@ -15,6 +15,7 @@ class Window(QOpenGLWidget):
 	frame_rate = 61
 
 	def __init__(self):
+
 		super().__init__()
 
 		self.setFixedSize(
@@ -43,7 +44,7 @@ class Window(QOpenGLWidget):
 	def initializeGL(self):
 		
 		self.ctx = moderngl.create_context(require=330)
-		self.ctx.clear(0.0, 0.0, 0.0)
+		self.ctx.clear(0.10, 0.10, 0.10)
 		self.ctx.enable(moderngl.BLEND)
 		self.ctx.multisample = True
 		self.init()
