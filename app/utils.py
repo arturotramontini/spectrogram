@@ -1,22 +1,18 @@
-
 import logging
 from pyrr import Matrix44
 
 
-
-def orthographic(w,h):
-  return Matrix44.orthogonal_projection(
-          0, w, h, 0, 1, -1, dtype='f4' )
+def orthographic(w, h):
+	return Matrix44.orthogonal_projection(0, w, h, 0, 1, -1, dtype="f4")
 
 
-
-#----------
+# ----------
 # Logger
-#----------
+# ----------
 
 
-#Create custom logger
-logger = logging.getLogger('spectrogram')
+# Create custom logger
+logger = logging.getLogger("spectrogram")
 
 # Set leve
 logger.setLevel(logging.INFO)
@@ -26,7 +22,7 @@ logger.setLevel(logging.INFO)
 handler = logging.StreamHandler()
 
 # Set formatter
-format = '%(asctime)s - %(levelname)s - %(filename)s - %(message)s'
+format = "%(asctime)s - %(levelname)s - %(filename)s - %(message)s"
 formatter = logging.Formatter(format)
 handler.setFormatter(formatter)
 
