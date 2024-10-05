@@ -1,5 +1,9 @@
 {
-    "editor.fontSize": 16,
+    "editor.fontSize": 12,
     "debug.console.fontSize": 16,
-    "scm.inputFontSize": 14
+    "scm.inputFontSize": 14,
+    "editor.fontFamily": "FreeMono",
+    "editor.lineHeight": 1,
+    "editor.suggestLineHeight": 1,
+    "window.density.editorTabHeight": "compact"
 }
