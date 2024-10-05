@@ -4,7 +4,7 @@ from source import File, Microphone
 from spec import Spec
 from text import Text
 from ticks import Ticks
-from wave import Wave
+from wave1 import Wave
 from window import Window
 from utils import logger
 
