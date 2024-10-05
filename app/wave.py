@@ -27,39 +27,29 @@ class Wave:
 	"""
 
     def __init__(self, ctx, x, y, w, h):
-
         self.ctx = ctx
-
         self.x = x
         self.y = y
         self.w = w
         self.h = h
-
         self.prog = self.ctx.program(
             vertex_shader=self.VERTEX, fragment_shader=self.FRAGMENT
         )
-
         self.samples = np.zeros(int(w * 2), dtype="f4")
-
         self.buffer = self.ctx.buffer(reserve=self.samples.nbytes, dynamic=True)
-
         self.vao = self.ctx.vertex_array(self.prog, self.buffer, "sample")
-
         self.prog["x"] = x
         self.prog["y"] = y
         self.prog["h"] = h
         self.sample = 0.002
-
         self.update()
 
     def add(self, window):
-
         if window is not None:
             self.sample = np.abs(window[:100]).max()
         #   sample = np.abs(window[:100]).max()
         # else:
         #   sample = 0.002
-
         self.samples[:-2] = self.samples[2:]
         # self.samples[-2:] = [-sample, sample]
         self.samples[-2:] = [-self.sample, self.sample]
