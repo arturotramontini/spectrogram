@@ -1,9 +1,12 @@
 {
-    "editor.fontSize": 13,
-    "debug.console.fontSize": 16,
-    "scm.inputFontSize": 14,
-    "editor.fontFamily": "FreeMono",
-    "editor.lineHeight": 1,
-    "editor.suggestLineHeight": 1,
-    "window.density.editorTabHeight": "compact"
+    // "editor.fontSize": 18,
+    // "debug.console.fontSize": 16,
+    // "scm.inputFontSize": 14,
+    // "editor.fontFamily": "FreeMono",
+    // "editor.lineHeight": 1,
+    // "editor.suggestLineHeight": 1,
+    // "window.density.editorTabHeight": "compact",
+    // "editor.insertSpaces": false,
+    // "editor.tabSize": 4,
+    // "editor.fontLigatures": false
 }
